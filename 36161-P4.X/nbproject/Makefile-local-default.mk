@@ -33,4 +33,4 @@ MP_CC_DIR="/opt/microchip/xc8/v3.00/bin"
 MP_AS_DIR="/opt/microchip/xc8/v3.00/bin"
 MP_LD_DIR="/opt/microchip/xc8/v3.00/bin"
 MP_AR_DIR="/opt/microchip/xc8/v3.00/bin"
-DFP_DIR=/opt/microchip/mplabx/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430
+DFP_DIR=/home/edson/.mchp_packs/Microchip/PIC18F-Q_DFP/1.25.433
