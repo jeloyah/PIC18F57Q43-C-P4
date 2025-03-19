@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=configbits.c gpio.c main.c clock.c timer0.c
+SOURCEFILES_QUOTED_IF_SPACED=configbits.c gpio.c main.c clock.c timer0.c pps.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/configbits.p1 ${OBJECTDIR}/gpio.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/clock.p1 ${OBJECTDIR}/timer0.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/configbits.p1.d ${OBJECTDIR}/gpio.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/clock.p1.d ${OBJECTDIR}/timer0.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/configbits.p1 ${OBJECTDIR}/gpio.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/clock.p1 ${OBJECTDIR}/timer0.p1 ${OBJECTDIR}/pps.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/configbits.p1.d ${OBJECTDIR}/gpio.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/clock.p1.d ${OBJECTDIR}/timer0.p1.d ${OBJECTDIR}/pps.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/configbits.p1 ${OBJECTDIR}/gpio.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/clock.p1 ${OBJECTDIR}/timer0.p1
+OBJECTFILES=${OBJECTDIR}/configbits.p1 ${OBJECTDIR}/gpio.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/clock.p1 ${OBJECTDIR}/timer0.p1 ${OBJECTDIR}/pps.p1
 
 # Source Files
-SOURCEFILES=configbits.c gpio.c main.c clock.c timer0.c
+SOURCEFILES=configbits.c gpio.c main.c clock.c timer0.c pps.c
 
 
 
@@ -128,6 +128,14 @@ ${OBJECTDIR}/timer0.p1: timer0.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/timer0.d ${OBJECTDIR}/timer0.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/timer0.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/pps.p1: pps.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/pps.p1.d 
+	@${RM} ${OBJECTDIR}/pps.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/pps.p1 pps.c 
+	@-${MV} ${OBJECTDIR}/pps.d ${OBJECTDIR}/pps.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/pps.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/configbits.p1: configbits.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -168,6 +176,14 @@ ${OBJECTDIR}/timer0.p1: timer0.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/timer0.p1 timer0.c 
 	@-${MV} ${OBJECTDIR}/timer0.d ${OBJECTDIR}/timer0.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/timer0.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/pps.p1: pps.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/pps.p1.d 
+	@${RM} ${OBJECTDIR}/pps.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/pps.p1 pps.c 
+	@-${MV} ${OBJECTDIR}/pps.d ${OBJECTDIR}/pps.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/pps.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
